@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+			{% block title %}
+		    {% endblock title %}
+	</title>
+	<meta name="author" content="Hamed Ahmadi">
+	<meta name="viewport" content="initial-scale=1,width=device-width">
+	<link type="text/css" rel="stylesheet" href="{% static 'base.css' %}">
+</head>
+<body>
+	<div id="header">
+		<img src="{% static 'sign.png'%}" id="sign"> 
+	</div>
+	<div id="content">
+		{% block content %}
+		{% endblock content %}
+	</div>
+	<div id="footer">
+	   تمام حقوق کپی رایت  &copy; دریافت شده 
+	</div>
+</body>
+</html>

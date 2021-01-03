@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}
+	Login
+{% endblock title %}
+{% block content %}
+
+	<form method="post" action="." id="login_form">
+		لطفا وارد شوید
+		{{form.as_p}}
+		{% csrf_token %}
+		<input type="submit" value="Login" >		
+	</form>
+	<h4 id="register_inviter">.ثبت نام نکرده اید ؟ <a href="{% url 'registration' %}">اینجا</a> ثبت نام کنید</h4>
+	{% if messages %}
+		{% for message in messages %}
+			<em id="login_error">{{message}}</em>
+		{% endfor %}
+	{% endif %}
+{% endblock content %}

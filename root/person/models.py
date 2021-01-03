@@ -4,8 +4,8 @@ from django.conf import settings
 
 #This is a parent model for our human models like student 
 class Person(models.Model):
-	name=models.CharField(max_length=15)
-	family=models.CharField(max_length=15)
+	name=models.CharField(max_length=30)
+	family=models.CharField(max_length=30)
 	birth_date=models.DateField()
 	#This field is used to distinguish a user from other   
 	code=models.CharField(max_length=9,unique=True)

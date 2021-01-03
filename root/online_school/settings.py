@@ -32,14 +32,17 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'class.apps.ClassConfig',
-    'person.apps.PersonConfig',
+    'authentication.apps.AuthenticationConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'pages.apps.PagesConfig',
+    'person.apps.PersonConfig',
+    'chat.apps.ChatConfig',
+    'room.apps.RoomConfig',
 ]
 
 MIDDLEWARE = [

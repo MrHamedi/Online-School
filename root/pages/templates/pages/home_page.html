@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+	Login
+{% endblock title %}
+{% block content %}
+<div id="logins">
+<a>
+	<button id="login_button">
+		<img src="{% static 'teacher_login.png'%}" id="login_img">
+		ورود کارکنان
+	</button>
+</a>
+<a href="#">
+	<button id="login_button">
+		<img src="{% static 'student_login.png'%}" id="login_img">
+		ورود دانشجویان
+	</button>
+</a>
+</div>
+{% endblock content %}
