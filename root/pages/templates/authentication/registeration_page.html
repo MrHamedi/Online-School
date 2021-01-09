@@ -1,9 +1,16 @@
 {% extends "base.html" %}
+{% load static %}
 {% block title %}
 	registration
 {% endblock title %}
 {% block content %}
 <div  id="register_form_block">
-	<p id="register_form_define">Please fill This form to register</p>
+	<p>برای ثبت نام لطفا فرم زیر را پر کنید</p>
+	<form method="post" action="." id="registration_form" enctype="multipart/form-data">
+		{% csrf_token %}
+		{{ form.as_p }}
+		{{ StudentForm.as_p }}
+		<input type="submit" value="ثبت" > 
+	</form>
 </div>
 {% endblock content %}

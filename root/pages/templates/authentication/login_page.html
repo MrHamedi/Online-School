@@ -3,17 +3,18 @@
 	Login
 {% endblock title %}
 {% block content %}
-
+<div id="login_form_block" >
+	لطفا وارد شوید
 	<form method="post" action="." id="login_form">
-		لطفا وارد شوید
 		{{form.as_p}}
 		{% csrf_token %}
 		<input type="submit" value="Login" >		
 	</form>
-	<h4 id="register_inviter">.ثبت نام نکرده اید ؟ <a href="{% url 'registration' %}">اینجا</a> ثبت نام کنید</h4>
+	<h4>.ثبت نام نکرده اید ؟ <a href="{% url 'registration' %}">اینجا</a> ثبت نام کنید</h4>
 	{% if messages %}
 		{% for message in messages %}
 			<em id="login_error">{{message}}</em>
 		{% endfor %}
 	{% endif %}
+</div>
 {% endblock content %}

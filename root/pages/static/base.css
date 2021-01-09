@@ -26,51 +26,47 @@ body{
 	text-align:center;
 }
 
-#logins{
+#register_form_block{
 	text-align:center;
+	margin-right:auto; 
+	margin-left:auto;
+	width:80%;
 }
 
-#login_img{
-	width:20vw;
-	max-width:100px; 
-}
 
-#login_img{
-	display:block;
-}
-
-#login_button{
-	margin:0 10% 0 10%;
-}
-
-#login_form{
+#registration_form{
+	text-align:right;
 	margin-left:auto;
 	margin-right:auto;
-	padding-top:25vh;
-	width:50%;
+	width:450px;
+	padding-right:10%;
+}
+
+
+
+#login_form{
+	text-align:right;
+	margin-right:auto; 
+	margin-left:auto;
+	width:450px;
+}
+
+#login_form_block{
 	text-align:center;
+	margin-right:auto; 
+	margin-left:auto;
+	width:80%;
+	padding-top:15vh;
 }
 
-.login_field{
-	float:right;
-}
-
-#register_inviter{
-	text-indent:40%;
-}
 
 #login_error{
 	color:red;
-	float:right;
-}
-
-#register_form_define{
 	margin-right:auto;
 	margin-left:auto;
-	color:red;
-	background-color:cyan;
 }
 
-#register_form_block{
-	text-align:center;
+
+#birth_date{
+	color:red;
 }

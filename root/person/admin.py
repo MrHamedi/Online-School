@@ -3,18 +3,18 @@ from django.contrib import admin
 
 
 class StudentAdmin(admin.ModelAdmin):
-	search_fields=("name","family","phone_number")
-	ordering=("name",)
-	list_display=("name","family","phone_number")
+	search_fields=("phone_number")
+
+	list_display=("phone_number")
 	
 
 class TeacherAdmin(admin.ModelAdmin):
-	search_fields=("name","family","_number","code")
-	list_display=("name","family","studies","degrees")
+	search_fields=("_number","code")
+	list_display=("studies","degrees")
 	list_filter=("studies","degrees")
-	ordering=("name",)
+
 	fieldsets=(
-		("Personal Information",{"fields":("name","family","phone_number","birth_date")}),
+		("Personal Information",{"fields":("phone_number","birth_date")}),
 		("Studies Information",{"fields":("studies","degrees")}),
 		("account Information",{"fields":("code","user"),"classes":("collapse",)})
 		)
