@@ -22,6 +22,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("",include("authentication.urls")),
+    path("rooms/",include("room.urls",namespace="rooms"))
 ]
 if(settings.DEBUG):   
     static(settings.MEDIA_URL,media_root=settings.MEDIA_ROOT),

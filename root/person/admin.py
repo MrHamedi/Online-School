@@ -3,10 +3,17 @@ from django.contrib import admin
 
 
 class StudentAdmin(admin.ModelAdmin):
-	search_fields=("phone_number")
-
-	list_display=("phone_number")
+	search_fields=("phone_number","user",)
+	list_display=("user",)
+	list_filter=("pre_number",)
 	
+	class Meta:
+		ordering=("user")
+	
+	def __str__(self):
+		return(self.user.username)
+
+
 
 class TeacherAdmin(admin.ModelAdmin):
 	search_fields=("_number","code")
@@ -20,8 +27,5 @@ class TeacherAdmin(admin.ModelAdmin):
 		)
 
 
-
-
-
 admin.site.register(Teacher,TeacherAdmin)
-admin.site.register(Student)
+admin.site.register(Student,StudentAdmin)

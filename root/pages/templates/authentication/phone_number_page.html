@@ -4,13 +4,12 @@
 {% endblock title %}
 {% block content %}
 <div id="login_form_block" >
-	لطفا وارد شوید
+	شماره تماس خود را وارد کنید
 	<form method="post" action="." id="login_form">
 		{{form.as_p}}
 		{% csrf_token %}
-		<input type="submit" value="Login" >		
+		<input type="submit" value="تایید" >		
 	</form>
-	<h4>.ثبت نام نکرده اید ؟ <a href="{% url 'phone_number' %}">اینجا</a> ثبت نام کنید</h4>
 	{% if messages %}
 		{% for message in messages %}
 			<em id="login_error">{{message}}</em>

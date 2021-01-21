@@ -17,6 +17,8 @@ body{
 #content{
 	background-color:#f2f2f2;
 	height:80vh;
+	overflow:scroll;
+
 }
 
 #footer{
@@ -69,4 +71,46 @@ body{
 
 #birth_date{
 	color:red;
+}
+
+#activator_form{
+	text-align:right;
+	margin-right:auto; 
+	margin-left:auto;
+	width:450px;
+}
+
+#activator_form_block{
+	text-align:center;
+	margin-right:auto; 
+	margin-left:auto;
+	width:80%;
+	padding-top:15vh;
+}
+
+.home_page_rooms{
+	background-color:#034afc;
+	border-bottom:double silver 10px;
+	text-align:center;
+	margin-bottom:2%
+}
+
+.home_page_rooms_study{
+	text-shadow:3px 2px 5px #959a9c;
+	font-size:200%;
+}
+
+.home_page_rooms_table{
+	width:50%;	
+	min-width:400px;
+	margin-right:auto;
+	margin-left:auto;
+}
+
+.home_page_rooms_table th{
+	text-align:left;
+	width:70px;
+}
+
+.home_page_rooms_table td{
 }

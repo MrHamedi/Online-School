@@ -15,6 +15,13 @@ class Person(models.Model):
 	class Meta:
 		abstract = True
 
+	def __str__(self):
+		return(self.user.username)
+
+	def days(self):
+		days=self.days.all()
+		return(days)
+
 
 class Student(Person):
 	pass

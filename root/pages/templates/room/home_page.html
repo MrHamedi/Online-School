@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %}
+	Home page
+{% endblock title %}
+{% block content %}
+	{% for room in object_list %}
+	<div class="home_page_rooms">
+		<i class="home_page_rooms_study">{{room.get_study_display}}</i>
+		<table class="home_page_rooms_table">
+			<tr>
+			<td>{{room.days.all|join:","}}</td>
+			<th>:روز ها</th>
+			<td>{{room.teacher.user.username}}</td><th>:استاد</th>
+			</tr>
+			<tr>
+			<td>{{room.end_time}}</td><th>:پایان</th>
+			<td>{{room.start_time}}</td><th>:شروع‌</th>
+			</tr>
+		</table>
+	</div>
+	{% endfor %}
+{% endblock content %}

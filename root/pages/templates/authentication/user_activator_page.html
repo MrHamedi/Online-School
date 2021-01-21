@@ -2,6 +2,12 @@
 {% block title %}
 		user activator
 {% endblock title %}
-{% block body %}
-
-{% endblock body %}
+{% block content %}
+<div id="activator_form_block">
+	<form method="post" action="." id="activator_form">
+		{{form.as_p}}
+		{% csrf_token %}
+		<input type="submit" value="چک کن">
+	</form>
+</div>
+{% endblock content %}

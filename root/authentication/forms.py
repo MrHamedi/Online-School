@@ -19,22 +19,13 @@ class StudentForm(forms.ModelForm):
 	
 	class Meta:
 		model=Student
-		fields=("phone_number","pre_number","birth_date")
+		fields=("birth_date",)
 		labels={
 			"birth_date":"تولد",
-			"phone_number":"شماره تماس",
-			"pre_number" : "پیش شماره",
 		}
 		widgets={
 			'birth_date':DateInput()
 		}
-
-	def clean(self):
-		clean_data=self.cleaned_data
-		number=clean_data['pre_number']+clean_data['phone_number']
-		number=phonenumbers.parse(number)
-		if(not phonenumbers.is_possible_number(number) or  not phonenumbers.is_valid_number(number)):
-			raise forms.ValidationError("فرمت شماره تماس صحیح نمی باشد ")
 
 
 class RegistrationForm(forms.ModelForm):
@@ -59,6 +50,26 @@ class RegistrationForm(forms.ModelForm):
 			return(forms.ValidationError(request,"The passwords are not match"))
 
 
+class PhoneNumberForm(forms.ModelForm):
+	class Meta:
+		model=Student
+		fields=("pre_number","phone_number")
+		labels={
+			"phone_number":"شماره تماس",
+			"pre_number" : "پیش شماره",
+		}
+		widgets={
+			#"phone_number":forms.CharField(),
+		}
+
+	def clean(self):
+		clean_data=self.cleaned_data
+		number=clean_data['pre_number']+clean_data['phone_number']
+		number=phonenumbers.parse(number)
+		if(not phonenumbers.is_possible_number(number) or  not phonenumbers.is_valid_number(number)):
+			raise forms.ValidationError("فرمت شماره تماس صحیح نمی باشد ")
+
+
 #This form is used to get activator code from user 
 class UserActivatorForm(forms.Form):
-	code=forms.CharField(max_length=9)
+	code=forms.CharField(max_length=9,label="کد فعالسازی")
